@@ -2,11 +2,6 @@ HashTable 	-> 	Dictionary<TKey, TValue>
 ArrayList	->	List<T>
 String 		->	StringBuilder
 
-Binary tree traversals
-	- In-Order
-	- Pre-Order
-	- Post-Order
-
 Binary Heaps
 Priority Queue
 
@@ -15,3 +10,5 @@ DFS
 BFS
 
 Bidirectional search
+
+Radix sort
