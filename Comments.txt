@@ -11,6 +11,6 @@ BFS
 
 Bidirectional search
 
-Radix sort
+Radix (bucket) sort
 
 https://www.freecodecamp.org/
