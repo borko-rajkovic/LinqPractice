@@ -3,6 +3,9 @@
   <Reference>&lt;RuntimeDirectory&gt;\System.Threading.Tasks.dll</Reference>
 </Query>
 
+// Solution for N X N matrix
+// Using iterator
+
 class Program
 {
     public enum Piece { Empty, Red, Blue };
@@ -127,17 +130,14 @@ class Program
     public static Piece HasWon(Piece[][] board, PositionIterator iterator)
     {
         int i = 0;
-        Position firstPosition;
         Piece first=Piece.Empty;
         foreach (var item in iterator)
         {
             if (i == 0)
             {
-                firstPosition = item;
-                first = board[firstPosition.row][firstPosition.column];
+                first = board[item.row][item.column];
             }
-            Position position = item;
-            if (board[position.row][position.column] != first)
+            if (board[item.row][item.column] != first)
             {
                 return Piece.Empty;
             }

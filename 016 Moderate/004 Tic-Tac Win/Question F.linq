@@ -3,6 +3,9 @@
   <Reference>&lt;RuntimeDirectory&gt;\System.Threading.Tasks.dll</Reference>
 </Query>
 
+// Solution for N X N matrix
+// Using class for reuse of loops
+
 class Program
 {
     public enum Piece { Empty, Red, Blue };
