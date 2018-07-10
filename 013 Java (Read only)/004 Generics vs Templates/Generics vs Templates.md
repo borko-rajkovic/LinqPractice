@@ -1,7 +1,11 @@
 [What are the differences between Generics in C# and Java… and Templates in C++?][stackoverflow]
+
 [Differences Between C++ Templates and C# Generics][microsoftlink]
+
 [Anders interview about templates and generics][artima]
+
 [How do C# generics compare to C++ templates][msdnblog]
+
 
 # C# Generics allow you to declare something like this.
 ```sh
