@@ -1,7 +1,11 @@
 [What are the differences between Generics in C# and Java… and Templates in C++?][stackoverflow]
+
 [Differences Between C++ Templates and C# Generics][microsoftlink]
+
 [Anders interview about templates and generics][artima]
+
 [How do C# generics compare to C++ templates][msdnblog]
+
 
 # C# Generics allow you to declare something like this.
 ```sh
@@ -68,7 +72,7 @@ C++ suffers from none of these problems. The compiler doesn't care about passing
 
 - C# generics do not provide the same amount of flexibility as C++ templates. For example, it is not possible to call arithmetic operators in a C# generic class, although it is possible to call user defined operators.
 
-- C# does not allow non-type template parameters, such as template C<int i> {}.
+- C# does not allow non-type template parameters, such as template C&lt;int i> {}.
 
 - C# does not support explicit specialization; that is, a custom implementation of a template for a specific type.
 
