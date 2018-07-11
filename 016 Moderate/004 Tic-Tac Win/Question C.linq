@@ -3,6 +3,8 @@
   <Reference>&lt;RuntimeDirectory&gt;\System.Threading.Tasks.dll</Reference>
 </Query>
 
+// Solution for only 3 X 3 matrix
+
 class Program
 {
     public enum Piece { Empty, Red, Blue };

@@ -3,6 +3,10 @@
   <Reference>&lt;RuntimeDirectory&gt;\System.Threading.Tasks.dll</Reference>
 </Query>
 
+// Solution for N X N matrix
+// Using nested loops
+// (repeating work and is not pretty)
+
 class Program
 {
     public enum Piece { Empty, Red, Blue };
