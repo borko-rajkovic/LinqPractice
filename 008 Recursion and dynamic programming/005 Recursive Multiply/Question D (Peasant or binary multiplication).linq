@@ -4,12 +4,6 @@ class Program
 {
     public static int counter = 0;
 
-    public static int Sum(int x, int y)
-    {
-        counter++;
-        return x + y;
-    }
-
     public static int MinProduct(int a, int b)
     {
         if (a < b) return MinProduct(b, a);
