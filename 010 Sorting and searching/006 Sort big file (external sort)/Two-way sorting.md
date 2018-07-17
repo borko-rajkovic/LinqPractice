@@ -41,15 +41,15 @@ Merge the first two runs (on Tb1 and Tb2) and store the result on Ta1.
 **Tb1:** 3, 17, 29 |  4, 9, 10 | 11, 43
 **Tb2:** 18, 24, 56 |  6, 36, 45 |
 
-![](L17-ExtSortFig01.jpg) ![](L17-ExtSortFig02.jpg) ![](L17-ExtSortFig03.jpg) ![](L17-ExtSortFig04.jpg)
+![](https://github.com/borko-rajkovic/LinqPractice/raw/master/010%20Sorting%20and%20searching/006%20Sort%20big%20file%20(external%20sort)/images/L17-ExtSortFig01.jpg) ![](https://github.com/borko-rajkovic/LinqPractice/raw/master/010%20Sorting%20and%20searching/006%20Sort%20big%20file%20(external%20sort)/images/L17-ExtSortFig02.jpg) ![](https://github.com/borko-rajkovic/LinqPractice/raw/master/010%20Sorting%20and%20searching/006%20Sort%20big%20file%20(external%20sort)/images/L17-ExtSortFig03.jpg) ![](https://github.com/borko-rajkovic/LinqPractice/raw/master/010%20Sorting%20and%20searching/006%20Sort%20big%20file%20(external%20sort)/images/L17-ExtSortFig04.jpg)
 
 Thus we have the first two runs on Ta1 and Ta2, each twice the size of the original runs:
 
-![](L17-ExtSortFig05.jpg)
+![](https://github.com/borko-rajkovic/LinqPractice/raw/master/010%20Sorting%20and%20searching/006%20Sort%20big%20file%20(external%20sort)/images/L17-ExtSortFig05.jpg)
 
 Next we merge the third runs on Tb1 and Tb2 and store the result on Ta1. Since only Tb1 contains a third run, it is copied onto Ta1:
 
-![](L17-ExtSortFig06.jpg)
+![](https://github.com/borko-rajkovic/LinqPractice/raw/master/010%20Sorting%20and%20searching/006%20Sort%20big%20file%20(external%20sort)/images/L17-ExtSortFig06.jpg)
 
 ### B2. Merging runs of length 6 to obtain runs of length 12.  
 
@@ -57,11 +57,11 @@ Next we merge the third runs on Tb1 and Tb2 and store the result on Ta1. Since o
 
 After merging the first two runs from Ta1 and Ta2, we get a run of length 12, stored on Tb1:
 
-![](L17-ExtSortFig07.jpg)
+![](https://github.com/borko-rajkovic/LinqPractice/raw/master/010%20Sorting%20and%20searching/006%20Sort%20big%20file%20(external%20sort)/images/L17-ExtSortFig07.jpg)
 
 The second set of runs is only one run, copied to Tb2
 
-![](L17-ExtSortFig08.jpg)
+![](https://github.com/borko-rajkovic/LinqPractice/raw/master/010%20Sorting%20and%20searching/006%20Sort%20big%20file%20(external%20sort)/images/L17-ExtSortFig08.jpg)
 
 Now on each tape there is only one run. The last step is to merge these two runs and to get the entire file sorted.
 
@@ -69,7 +69,7 @@ Now on each tape there is only one run. The last step is to merge these two runs
 
 The result is:
 
-![](L17-ExtSortFig09.jpg)
+![](https://github.com/borko-rajkovic/LinqPractice/raw/master/010%20Sorting%20and%20searching/006%20Sort%20big%20file%20(external%20sort)/images/L17-ExtSortFig09.jpg)
 
 Number of passes: **log(N/M)**
 
