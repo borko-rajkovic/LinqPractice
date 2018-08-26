@@ -184,16 +184,30 @@ class Program
     {
         int[] minHeapArray = new int[minHeap.Count];
 
-        for (int i = 0; i < minHeap.Count; i++)
+        int k = 0;
+
+        while (minHeap.Count > 0)
         {
-            minHeapArray[i] = minHeap.Dequeue();
+            minHeapArray[k++] = minHeap.Dequeue();
+        }
+
+        for (int i = 0; i < minHeapArray.Length; i++)
+        {
+            minHeap.Enqueue(minHeapArray[i]);
         }
 
         int[] maxHeapArray = new int[maxHeap.Count];
 
-        for (int i = 0; i < maxHeap.Count; i++)
+        k = 0;
+
+        while (maxHeap.Count>0)
         {
-            maxHeapArray[i] = maxHeap.Dequeue();
+            maxHeapArray[k++] = maxHeap.Dequeue();
+        }
+
+        for (int i = 0; i < maxHeapArray.Length; i++)
+        {
+            maxHeap.Enqueue(maxHeapArray[i]);
         }
 
         Array.Sort(minHeapArray);
