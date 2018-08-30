@@ -62,60 +62,26 @@ class Program
         }
     }
 
-    public class Tester
+    public static List<int> RemoveDups(int[] array)
     {
-        public static List<int> RemoveDups(int[] array)
+        HashSet<int> set = new HashSet<int>();
+        foreach (int a in array)
         {
-            HashSet<int> set = new HashSet<int>();
-            foreach (int a in array)
-            {
-                set.Add(a);
-            }
-            List<int> list = new List<int>();
-            list.AddRange(set);
-            return list;
+            set.Add(a);
         }
+        List<int> list = new List<int>();
+        list.AddRange(set);
+        return list;
+    }
 
-        public static Boolean IsEqual(Dictionary<DocPair, Double> one, Dictionary<DocPair, Double> two)
+    public static void PrintSim(Dictionary<DocPair, Double> similarities)
+    {
+        foreach (var result in similarities)
         {
-            if (one.Count != two.Count)
-            {
-                return false;
-            }
-
-            foreach (var a in one)
-            {
-                if (!two.ContainsKey(a.Key))
-                {
-                    return false;
-                }
-                double sim1 = a.Value;
-                double sim2 = two[a.Key];
-                if (sim1 != sim2)
-                {
-                    return false;
-                }
-            }
-            return true;
+            DocPair pair = result.Key;
+            Double sim = result.Value;
+            Console.WriteLine(pair.doc1 + ", " + pair.doc2 + " : " + sim);
         }
-
-        public static void PrintSim(Dictionary<DocPair, Double> similarities)
-        {
-            foreach (var result in similarities)
-            {
-                DocPair pair = result.Key;
-                Double sim = result.Value;
-                Console.WriteLine(pair.doc1 + ", " + pair.doc2 + " : " + sim);
-            }
-        }
-
-        public static void AddTo(Dictionary<int, Document> documents, int id, int[] array)
-        {
-            List<int> w = RemoveDups(array);
-            Document doc = new Document(id, w);
-            documents.Add(id, doc);
-        }
-
     }
 
     private static readonly Random RandomIntNumbers = new Random();
@@ -140,14 +106,11 @@ class Program
         return array;
     }
 
-
-
     public static Dictionary<DocPair, Double> ComputeSimilarities(Dictionary<int, Document> documents)
     {
         Dictionary<int, List<int>> wordToDocs = GroupWords(documents);
-        Dictionary<DocPair, Double> similarities = ComputeIntersections(wordToDocs);
-        AdjustToSimilarities(documents, similarities);
-        return similarities;
+        Dictionary<DocPair, Double> similarities = ComputeIntersections(wordToDocs);        
+        return AdjustToSimilarities(documents, similarities);
     }
 
     /* Create hash table from each word to where it appears. */
@@ -205,7 +168,7 @@ class Program
     }
 
     /* Adjust the intersection value to become the similarity. */
-    public static void AdjustToSimilarities(Dictionary<int, Document> documents, Dictionary<DocPair, Double> similarities)
+    public static Dictionary<DocPair, Double> AdjustToSimilarities(Dictionary<int, Document> documents, Dictionary<DocPair, Double> similarities)
     {
         Dictionary<DocPair, Double> newSimilarities = new Dictionary<DocPair, double>();
 
@@ -220,12 +183,12 @@ class Program
             newSimilarities[entry.Key] = (double)intersection / (double)union;
         }
 
-        similarities = newSimilarities;
+        return newSimilarities;
     }
 
     public static void Main(String[] args)
     {
-		int[][] tempArray =
+        int[][] tempArray =
         {
             new int[] { 3, 5, 1, 9 },
             new int[] { 2, 10, 0, 6},
@@ -239,19 +202,18 @@ class Program
             new int[] { 3, 6, 7, 10 }
         };
         int numDocuments = 10;
-        int docSize = 5;
         Dictionary<int, Document> documents = new Dictionary<int, Document>();
         for (int i = 0; i < numDocuments; i++)
         {
             int[] words = tempArray[i];
-            List<int> w = Tester.RemoveDups(words);
+            List<int> w = RemoveDups(words);
             Console.WriteLine(i + ": " + String.Join(", ", w));
             Document doc = new Document(i, w);
             documents.Add(i, doc);
         }
 
         Dictionary<DocPair, Double> similarities = ComputeSimilarities(documents);
-        Tester.PrintSim(similarities);
+        PrintSim(similarities);
 
     }
 }

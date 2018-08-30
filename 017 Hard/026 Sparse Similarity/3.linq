@@ -109,8 +109,7 @@ class Program
     {
         List<Element> elements = SortWords(documents);
         Dictionary<DocPair, Double> similarities = ComputeIntersections(elements);
-        AdjustToSimilarities(documents, similarities);
-        return similarities;
+        return AdjustToSimilarities(documents, similarities);
     }
 
     /* Throw all words into one list, sorting by the word then the document. */
@@ -166,7 +165,7 @@ class Program
     }
 
     /* Adjust the intersection value to become the similarity. */
-    public static void AdjustToSimilarities(Dictionary<int, Document> documents, Dictionary<DocPair, Double> similarities)
+    public static Dictionary<DocPair, Double> AdjustToSimilarities(Dictionary<int, Document> documents, Dictionary<DocPair, Double> similarities)
     {
         Dictionary<DocPair, Double> newSimilarities = new Dictionary<DocPair, double>();
 
@@ -181,7 +180,7 @@ class Program
             newSimilarities[entry.Key] = (double)intersection / (double)union;
         }
 
-        similarities = newSimilarities;
+        return newSimilarities;
     }
 
     public static void Main(String[] args)
