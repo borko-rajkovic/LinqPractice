@@ -17,3 +17,22 @@ https://www.freecodecamp.org/
 
 Generics vs templates
 Catalan numbers
+
+B-tree
+AVL tree
+Red-Black tree
+
+Rabin-Karp
+Knut-Moris-Prat
+
+Bellman-Ford
+Floyd-Warshall
+Dijkstra
+A*
+
+Graph Coloring
+
+MapReduce
+
+
+P, NP, NP complete
